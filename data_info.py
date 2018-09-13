@@ -1,3 +1,5 @@
+import pandas as pd
+
 def missing_data(test):
   df_train=test
   total = df_train.isnull().sum().sort_values(ascending=False)
