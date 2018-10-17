@@ -74,13 +74,13 @@ def autocorrplots(df_S,col_name,selectedLagPoints,maxLagDays):
             axBottomRow[i].set_yticks([],[])
     plt.tight_layout()
     plt.show()
-
-####################################
-NG = quandl.get("CHRIS/CME_NG1", collapse="daily")
-df = add_all_ta_features(NG, "Open", "High", "Low", "Last", "Volume", fillna=True)
-svgfilter = lambda x: savgol_filter(x,5,2)
-df_smooth=df.apply(svgfilter)
-from pandas.plotting import autocorrelation_plot
-autocorrelation_plot(df.Settle)
-plt.show()
-##############################
+#############################################################################################
+def alltechindicators(NG):
+    df = add_all_ta_features(NG, "Open", "High", "Low", "Last", "Volume", fillna=True)
+    return df
+#############################################################################################
+def smoothsvgfilter(df,a,b):
+    svgfilter = lambda x: savgol_filter(x,a,b)
+    df_smooth=df.apply(svgfilter)
+    return df_smooth
+#############################################################################################
