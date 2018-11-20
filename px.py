@@ -1,3 +1,25 @@
+import requests
+import calendar
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+from datetime import timedelta
+from pytz import UTC
+import seaborn as sns
+import datetime
+import os
+import api_wrapper as paw
+import plotly.plotly as py
+import plotly.graph_objs as go
+import np_utils
+import stldecompose
+import urllib2
+import quandl
+from ta import *
+import scipy.signal
+from scipy.signal import savgol_filter
+
 def quandlkey(a):
     return quandl.ApiConfig.api_key = a
 #############################################################################################
